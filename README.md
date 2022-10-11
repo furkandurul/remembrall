@@ -2,9 +2,11 @@
 
 Welcome to [Project Name]!
 
-For documentation of the, [Wiki](https://github.com/furkandurul/swe573/wiki) of the repository will be used.
+Documentation: [Wiki](https://github.com/furkandurul/swe573/wiki)
 
 For the tracking of the project, [Issues](https://github.com/furkandurul/swe573/issues) will be used. Feel free to create issues! All contributions are welcome.
+
+## Issue Labels
 
 Following label convention is applied for the issues in the sake of better tracking of the issues and developments. It's sepeareted into three main types: **State**, **Type** and **Priority**.
 
@@ -17,6 +19,7 @@ Following label convention is applied for the issues in the sake of better track
 - **state: pending review** This issue or pull request is pending review
 
 - **type: bug** For issues when something is not working
+- **type: research** For research of an unknown concept or tool for project
 - **type: chore** Miscellaneous things, jobs not significant for project
 - **type: discussion** For questions about the project
 - **type: docs** Improvements or additions to documentation
