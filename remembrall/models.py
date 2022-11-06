@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Post(models.Model):
-	post_id = models.CharField(max_length=200, default="0")
+	post_id = models.IntegerField(unique=True, default=0)
 	ref_link = models.URLField()
 	publish_date = models.DateTimeField("date created")
 	creator_id = models.ForeignKey("User", on_delete=models.SET_NULL, null=True, to_field="user_id")
@@ -17,7 +17,7 @@ class Post(models.Model):
 			)
 
 class User(models.Model):
-	user_id = models.CharField(max_length=200, unique=True, default="0")
+	user_id = models.IntegerField(unique=True, default=0)
 	user_name = models.CharField(max_length=50, default="new_user")
 	user_email = models.URLField()
 	sign_up_date = models.DateField("date registered")
