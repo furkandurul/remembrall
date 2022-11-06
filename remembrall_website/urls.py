@@ -20,7 +20,6 @@ from remembrall import views
 urlpatterns = [
     path("", views.home, name="landingpage"),
     path("admin/", admin.site.urls),
-   # path("accounts/", include("accounts.urls")),
     path("remembrall/", include("remembrall.urls")),
-   # path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("allauth.urls")),
 ]

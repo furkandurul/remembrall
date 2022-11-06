@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-   # "accounts.apps.AccountsConfig",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    #"allauth.socialaccount.twitter",
+    #"allauth.socialaccount.instagram",
+    #"allauth.socialaccount.facebook",
+    #"allauth.socialaccount.linkedin",
+    #"allauth.socialaccount.github",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +75,14 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 WSGI_APPLICATION = "remembrall_website.wsgi.application"
@@ -124,14 +140,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-"""
-# Landing Page Configuration
+SITE_ID = 1
 
-LOGIN_REDIRECT_URL = "user_space"
-LOGOUT_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "landingpage"
 
-# SMTP Configuration for project
-
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
-"""
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_VERIFICATION = "none"
