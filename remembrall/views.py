@@ -5,16 +5,23 @@ from django.template import loader
 
 from .models import User, Post
 
-def index(request):
-	return HttpResponse("Hello, world. You're at the polls index")
-
-def post(request, post_id):
-	template = loader.get_template('remembrall/post.html')
+def home(request):
+	template = loader.get_template("home.html")
 	context = {}
 	return HttpResponse(template.render(context, request))
 
-def user_space(request, user_id):
+def login(request):
+	template = loader.get_template("registration/login.html")
+	context = {}
+	return HttpResponse(template.render(context, request))
+
+def post(request, post_id):
+	template = loader.get_template("remembrall/post.html")
+	context = {}
+	return HttpResponse(template.render(context, request))
+
+def user_space(request):
 	#user_post_list = Post.objects.filter(creator_id=user_id)
-	template = loader.get_template('remembrall/user_space.html')
+	template = loader.get_template("remembrall/user_space.html")
 	context = {}
 	return HttpResponse(template.render(context, request))
