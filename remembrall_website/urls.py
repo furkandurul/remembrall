@@ -18,7 +18,7 @@ from django.urls import include, path
 from remembrall import views
 
 urlpatterns = [
-    path("", views.home, name="landingpage"),
+    path("", views.landing_page, name="landingpage"),
     path("admin/", admin.site.urls),
     path("remembrall/", include("remembrall.urls")),
     path("accounts/", include("allauth.urls")),

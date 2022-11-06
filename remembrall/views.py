@@ -5,6 +5,12 @@ from django.template import loader
 
 from .models import User, Post
 
+
+def landing_page(request):
+	template = loader.get_template("landing_page.html")
+	context = {}
+	return HttpResponse(template.render(context, request))
+
 def home(request):
 	template = loader.get_template("home.html")
 	context = {}
