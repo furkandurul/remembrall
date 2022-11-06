@@ -10,10 +10,12 @@ def home(request):
 	context = {}
 	return HttpResponse(template.render(context, request))
 
+"""
 def login(request):
 	template = loader.get_template("registration/login.html")
 	context = {}
 	return HttpResponse(template.render(context, request))
+"""
 
 def post(request, post_id):
 	template = loader.get_template("remembrall/post.html")
