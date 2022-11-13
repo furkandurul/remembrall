@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 
-from .models import User, Post
+from .models import Post
 
 
 def landing_page(request):
