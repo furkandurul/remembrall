@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!-- templates/Post.html-->
+{% extends 'base.html' %}
 
-	<h1>Post Detail</h1>
-	<p><a href="{% url 'home' %}">Home</a></p>
-    <p><a href="{% url 'post_list' %}">My Posts</a></p>
-    <p><a href="{% url 'account_logout' %}">Log Out</a>
+{% block title %}Post Detail{% endblock %}
 
-</body>
-</html>
+{% block sidebar %}
+  <p><a href="{% url 'post_list' %}">Post List</a></p>
+  <p><a href="{% url 'create_post' %}">Create Post</a></p>
+  <p><a href="{% url 'home' %}">Home</a></p>
+  <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+{% endblock sidebar %}
+
+{% block content %}
+Hi {{ user.username }}!
+{% endblock content %}

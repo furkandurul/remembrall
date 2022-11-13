@@ -1,0 +1,14 @@
+<!-- templates/Post.html-->
+{% extends 'base.html' %}
+
+{% block title %}Post Detail{% endblock %}
+
+{% block sidebar %}
+<p><a href="{% url 'post_list' %}">Post List</a></p>
+<p><a href="{% url 'home' %}">Home</a></p>
+<p><a href="{% url 'account_logout' %}">Log Out</a></p>
+{% endblock sidebar %}
+
+{% block content %}
+Hi {{ user.username }}!
+{% endblock content %}
