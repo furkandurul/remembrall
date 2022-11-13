@@ -1,14 +1,27 @@
-<!-- templates/base.html -->
+<!-- templates/base.html-->
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<title> {% block title %} Remembrall Base Template {% endblock title %}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+<div class="sidenav">
+  {% block sidebar %}
+  {% endblock sidebar %}
+</div>
+
+<div class="content">
+  {% block content %}
+  {% endblock content %}
+</div>
 </body>
+
 </html>
+
+

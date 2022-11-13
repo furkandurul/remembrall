@@ -25,3 +25,8 @@ def post(request):
 	template = loader.get_template("remembrall/post.html")
 	context = {}
 	return HttpResponse(template.render(context, request))
+
+def create_post(request):
+	template = loader.get_template("remembrall/create_post.html")
+	context = {}
+	return HttpResponse(template.render(context, request))
